@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
-require 'tstyle-login/cli'
-TStyleLogin::CLI.start
+require 'ajaxbox-login/cli'
+AjaxBoxLogin::CLI.start

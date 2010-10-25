@@ -1,4 +1,4 @@
-require 'tstyle-login/tstyle-login'
+require 'ajaxbox-login/ajaxbox-login'
 
-describe TStyleLogin do
+describe AjaxBoxLogin do
 end

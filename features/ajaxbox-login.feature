@@ -1,4 +1,4 @@
-Feature: TStyleLogin
+Feature: AjaxBoxLogin
   In order to present a Twitter-style login box
   As an Ajax element
   I want to be sure its hidden or present as appropriate

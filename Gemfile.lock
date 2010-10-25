@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tstyle-login (0.0.1)
+    ajaxbox-login (0.0.1)
       activesupport
       thor
 
@@ -74,4 +74,4 @@ DEPENDENCIES
   cucumber
   rspec (~> 2.0.0)
   thor
-  tstyle-login!
+  ajaxbox-login!

@@ -1,4 +1,4 @@
-module TStyleLogin
-  class TStyleLogin
+module AjaxBoxLogin
+  class AjaxBoxLogin
   end
 end

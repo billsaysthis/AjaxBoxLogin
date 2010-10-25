@@ -1,0 +1,7 @@
+#login-box { position: absolute; width: 210px; left: 700px; top: 25px; text-align: left; padding: 0; z-index:99;}
+#login-box, #login-box div {background: #eff7f7;}
+.loginBox ol {padding: 10px 10px 0px;}
+.loginBox li {margin-bottom: 4px;}
+.loginBox input { width: 160px; height: 20px; font-size: 100%;}
+.loginBox #login_submit {width: 60px; margin: 0px 0px 10px 10px; vertical-align: middle; height: 26px;}
+.tl-cb { clear: both; }

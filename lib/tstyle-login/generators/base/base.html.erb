@@ -1,0 +1,29 @@
+<!--[if IE]>
+	<style type="text/css">
+		.login-box { margin: 60px 35px; }
+	</style>
+<![endif]-->
+
+<div id='login-box' style='display:none'>
+	<!-- 
+		The in-login-box class is used by the JS observer function to determine 
+		if click is outside Login box
+	-->
+	<div class="in-login-box">
+		<%= form_for @user || User.new, :url => secure_login_url, :html => { :id => 'loginBoxForm', :class=> "in-login-box"} do |f| %>
+			<%= hidden_field_tag 'return_url', url_for %>
+			<%= hidden_field_tag 'login-box', :value => '1' %>
+			<ol class='in-login-box'>
+				<li class='in-login-box'><%= label_tag :login, 'Email', :class => 'in-login-box' %>:</li>
+				<li><%= text_field_tag 'login', nil, :class => 'in-login-box text' %><br /></li>
+				<li class='in-login-box'><%= label_tag :password, 'Password', :class => 'in-login-box' %>:</li>
+				<li><%= password_field_tag 'password', nil, :class => 'in-login-box text' %></li>
+				<li class='in-login-box'><p class='in-login-box'><%= link_to 'Forgot your password?', { :controller => 'account', :action => :forgot_password }, :class => 'forgot' %></p></li>
+			</ol>
+			<div class="in-login-box">
+				<%= submit_tag 'Login', :id => 'login_submit' %>
+			</div>
+		<% end %>
+		<div class="tl-cb"></div>
+	</div>
+</div>

@@ -14,17 +14,40 @@ Installs as a gem
 
 Invoke the tstylelogin generator
 
-    tstylelogin {view_type} {view_path}
-    tstylelogin erb shared   => generates ERB/CSS files, with the partial in app/views/shared
-    tstylelogin haml layouts => generates HAML/SCSS files, with the partial in app/views/layouts
+    tstylelogin {view_type} {view_path} {javascript_lib}
+    tstylelogin erb shared jquery      => generates ERB/CSS files, dependent on jQuery, with the partial in app/views/shared
+    tstylelogin haml layouts prototype => generates HAML/SCSS files, dependent on PrototypeJS, with the partial in app/views/layouts
 
 ### Options
 * view_type is a string naming the template system to use, currently valid values are 'erb' and 'haml'
 * view_path is a string appended to 'app/views' to build the directory name in which the partial is generated
+* javascript_lib is a string representing the name of the JavaScript framework used in your app, currently valid values are 'jquery' and 'prototype'
 
 ### Note
 * tstyle-login.js is always generated to /public/javascripts
 
+## In Your Code
+
+### Using the Partial
+
+The partial, _tstyle-login, expects to be passed two parameters:
+* The login object (e.g., a User, Account or similar) that responds to two messages: login and password
+* The logged in state, similar to current_user.logged_in?
+
+    <%= render partial 'shared/tstyle-login', :locals => {:logged_status => boolean, :login_object => object} %>
+    <%= render partial 'shared/tstyle-login', :locals => {:logged_status => true, :login_object => User} %>
+
+You may or may not have a login attribute on your User/Account object, if so you can edit the partial to use your preferred name or add an attr_accessible alias to the appropriate attribute on your object.
+
+### Using the stylesheet and JavaScript files
+
+Specifics may vary with your usage (such as if you use a tool like Jammit or Asset Packager) but basic Rails usage would have you adding these two files to the head section of your layout(s) as such:
+
+    <%= stylesheet_link_tag 'tstyle-login.css' %>
+    <%= javascript_include_tag 'tstyle-login' %>
+
+The CSS provided is fairly basic, it expects that the login box will be shown at the top of the page towards the right edge. To match your app's styling and layout simply edit the provided CSS.
+	  
 ## Note on Patches/Pull Requests
 
 * Fork the project.

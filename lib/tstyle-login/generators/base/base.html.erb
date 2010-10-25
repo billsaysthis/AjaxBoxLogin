@@ -4,13 +4,19 @@
 	</style>
 <![endif]-->
 
+<%- unless logged_status -%>
+  <li class="loginLinkContainer"><%= link_to "Login", '', :onclick => 'toggleLoginBox(); return false;', :id => 'loginLink' %></li>
+<%- else -%>
+  <li><%= link_to "Logout", logout_accounts_url %></li>
+<%- end -%>
+
 <div id='login-box' style='display:none'>
 	<!-- 
 		The in-login-box class is used by the JS observer function to determine 
 		if click is outside Login box
 	-->
 	<div class="in-login-box">
-		<%= form_for @user || User.new, :url => secure_login_url, :html => { :id => 'loginBoxForm', :class=> "in-login-box"} do |f| %>
+		<%= form_for login_object, :url => secure_login_url, :html => { :id => 'loginBoxForm', :class=> "in-login-box"} do |f| %>
 			<%= hidden_field_tag 'return_url', url_for %>
 			<%= hidden_field_tag 'login-box', :value => '1' %>
 			<ol class='in-login-box'>

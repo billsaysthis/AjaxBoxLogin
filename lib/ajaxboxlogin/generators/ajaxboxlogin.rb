@@ -24,26 +24,26 @@ module AjaxBoxLogin
       
       def copy_js(js_lib)
         if js_lib == 'protoype'
-          template("base.protoype.js", "public/javascripts/ajaxbox-login.js")
+          template("base.protoype.js", "public/javascripts/ajaxboxlogin.js")
         else
-          template("base.jquery.js", "public/javascripts/ajaxbox-login.js")
+          template("base.jquery.js", "public/javascripts/ajaxboxlogin.js")
         end
-        puts "Generated ajaxbox-login.js dependent on #{js_lib} in public/javascripts/"
+        puts "Generated ajaxboxlogin.js dependent on #{js_lib} in public/javascripts/"
       end
       
       def copy_css(view_type)
         if view_type == 'haml'
-          template("base.scss", "app/stylesheets/ajaxbox-login.scss")
-          r = "Generated ajaxbox-login.scss in app/stylesheets/"
+          template("base.scss", "app/stylesheets/ajaxboxlogin.scss")
+          r = "Generated ajaxboxlogin.scss in app/stylesheets/"
         else
-          template("base.css", "public/stylesheets/ajaxbox-login.css")
-          r = "Generated ajaxbox-login.css in public/stylesheets/"
+          template("base.css", "public/stylesheets/ajaxboxlogin.css")
+          r = "Generated ajaxboxlogin.css in public/stylesheets/"
         end
         puts r
       end
       
       def self.source_root
-        File.dirname(__FILE__) + "/ajaxbox-login"
+        File.dirname(__FILE__) + "/ajaxboxlogin"
       end
     end
   end

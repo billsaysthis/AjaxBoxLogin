@@ -6,27 +6,27 @@ Feature: Generating things
 	Scenario: Generating erb files for Prototype
 	  When I run "ajaxboxlogin erb shared"
 		Then the following files should exist:
-			| app/views/shared/_ajaxbox-login.html.erb |
-			| public/javascripts/ajaxbox-login.js |
-			| public/stylesheets/ajaxbox-login.css |
-		Then the file "public/javascripts/ajaxbox-login.js" should contain
+			| app/views/shared/_ajaxboxlogin.html.erb |
+			| public/javascripts/ajaxboxlogin.js |
+			| public/stylesheets/ajaxboxlogin.css |
+		Then the file "public/javascripts/ajaxboxlogin.js" should contain
 			| Requires prototype.js to already be invoked |
 
 	Scenario: Generating erb files for jQuery
 	  When I run "ajaxboxlogin erb shared jquery"
 		Then the following files should exist:
-			| app/views/shared/_ajaxbox-login.html.erb |
-			| public/javascripts/ajaxbox-login.js |
-			| public/stylesheets/ajaxbox-login.css |
-		Then the file "public/javascripts/ajaxbox-login.js" should contain
+			| app/views/shared/_ajaxboxlogin.html.erb |
+			| public/javascripts/ajaxboxlogin.js |
+			| public/stylesheets/ajaxboxlogin.css |
+		Then the file "public/javascripts/ajaxboxlogin.js" should contain
 			| Requires jquery.js to already be invoked |
 
 	Scenario: Generating haml/scss files
 	  When I run "ajaxboxlogin haml shared"
 		Then the following files should exist:
-			| app/views/shared/_ajaxbox-login.html.haml |
-			| public/javascripts/ajaxbox-login.js |
-			| app/stylesheets/ajaxbox-login.scss |
+			| app/views/shared/_ajaxboxlogin.html.haml |
+			| public/javascripts/ajaxboxlogin.js |
+			| app/stylesheets/ajaxboxlogin.scss |
 
 	
 	

@@ -1,4 +1,4 @@
 source "http://rubygems.org"
 
-# Specify your gem's dependencies in ajaxbox-login.gemspec
+# Specify your gem's dependencies in ajaxboxlogin.gemspec
 gemspec

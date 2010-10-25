@@ -1,5 +1,5 @@
 require 'thor' 
-require 'ajaxbox-login/ajaxbox-login'
+require 'ajaxboxlogin/ajaxboxlogin'
 
 module AjaxBoxLogin
   class CLI < Thor

@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
-require 'ajaxbox-login/cli'
+require 'ajaxboxlogin/cli'
 AjaxBoxLogin::CLI.start

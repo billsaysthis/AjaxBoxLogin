@@ -1,5 +1,7 @@
 # TStyleLogin
 
+THIS IS WAY PRE-ALPHA AND DOES NOT WORK YET
+
 TStyleLogin is a small gem that generates the Rails 3 view partial, stylesheet and javascript needed to have a Twitter-style AJAX login box on your app's pages. View can be generated as either ERB or HAML and with HAML you get SCSS instead of SASS for the stylesheet.
 
 TStyleLogin is not compatible with versions of Rails before 3.0. Patches that add such support will be considered.

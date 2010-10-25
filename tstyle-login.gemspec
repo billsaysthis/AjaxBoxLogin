@@ -6,12 +6,13 @@ Gem::Specification.new do |s|
   s.name        = "tstyle-login"
   s.version     = Tstyle::Login::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
+  s.authors     = ["Bill Lazzar"]
+  s.email       = ["blazar+tsl@gmail.com"]
   s.homepage    = "http://rubygems.org/gems/tstyle-login"
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Generates the Rails 3 view partial, stylesheet and javascript for a Twitter-style AJAX login box}
+  s.description = %q{TStyleLogin is a small gem that generates the Rails 3 view partial, stylesheet and javascript needed to have a Twitter-style AJAX login box on your app's pages.}
 
+  s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project = "tstyle-login"
 
   s.files         = `git ls-files`.split("\n")
@@ -19,9 +20,16 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
   
+  s.add_development_dependency "bundler", ">= 1.0.0"
   s.add_development_dependency "rspec", "~> 2.0.0"
   s.add_development_dependency "cucumber"
   s.add_development_dependency "aruba"
   s.add_development_dependency "capybara"
 
+  s.add_dependency "activesupport"
+  s.add_dependency "thor"
+
+  s.files        = `git ls-files`.split("\n")
+  s.executables  = `git ls-files`.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact
+  s.require_path = 'lib'
 end

@@ -14,9 +14,9 @@ Installs as a gem
 
 Invoke the tstylelogin generator
 
-    tstylelogin {view_type} {view_path} {javascript_lib}
-    tstylelogin erb shared jquery      => generates ERB/CSS files, dependent on jQuery, with the partial in app/views/shared
-    tstylelogin haml layouts prototype => generates HAML/SCSS files, dependent on PrototypeJS, with the partial in app/views/layouts
+    tstylelogin gen {view_type} {view_path} {javascript_lib}
+    tstylelogin gen erb shared jquery      => generates ERB/CSS files, dependent on jQuery, with the partial in app/views/shared
+    tstylelogin gen haml layouts prototype => generates HAML/SCSS files, dependent on PrototypeJS, with the partial in app/views/layouts
 
 ### Options
 * view_type is a string naming the template system to use, currently valid values are 'erb' and 'haml'

@@ -2,6 +2,11 @@
 $:.push File.expand_path("../lib", __FILE__)
 require "ajaxboxlogin/version"
 
+# TODO
+# Remove dynamic file lists
+# Replace with array list of files and iterate over array
+# See RAMP gemspec for example
+
 Gem::Specification.new do |s|
   s.name        = "ajaxboxlogin"
   s.version     = AjaxBox::Login::VERSION
@@ -29,7 +34,4 @@ Gem::Specification.new do |s|
   s.add_dependency "activesupport"
   s.add_dependency "thor"
 
-  s.files        = `git ls-files`.split("\n")
-  s.executables  = `git ls-files`.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact
-  s.require_path = 'lib'
 end

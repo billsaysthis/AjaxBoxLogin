@@ -4,11 +4,13 @@ THIS IS WAY PRE-ALPHA AND DOES NOT WORK YET
 
 AjaxBoxLogin is a small gem that gives you a AJAX Twitter-style login box on your app's pages generates the Rails 3 view partial, stylesheet and javascript needed to have. 
 
-* View can be generated as either ERB or HAML and with HAML you get SCSS instead of SASS for the stylesheet.
+* View can be generated as either ERB or HAML
+* With HAML you get SCSS instead of SASS for the stylesheet
+* JavaScript can be dependent on either Prototype JS or jQuery
 
 AjaxBoxLogin is not compatible with versions of Rails before 3.0. Patches that add such support will be considered.
 
-## Reauirements
+## Requirements
 
 * Rails 3.0 or higher
 
@@ -22,9 +24,14 @@ Installs as a gem
 
 Invoke the ajaxboxlogin generator
 
+    Syntax:
     ajaxboxlogin gen {view_type} {view_path} {javascript_lib}
-    ajaxboxlogin gen erb shared jquery      => generates ERB/CSS files, dependent on jQuery, with the partial in app/views/shared
-    ajaxboxlogin gen haml layouts prototype => generates HAML/SCSS files, dependent on PrototypeJS, with the partial in app/views/layouts
+    
+    Generates ERB/CSS files, dependent on jQuery, with the partial in app/views/shared
+    ajaxboxlogin gen erb shared jquery      
+    
+    Generates HAML/SCSS files, dependent on PrototypeJS, with the partial in app/views/layouts
+    ajaxboxlogin gen haml layouts prototype
 
 ### Options
 
@@ -34,7 +41,7 @@ Invoke the ajaxboxlogin generator
 
 ### Note
 
-* ajaxboxlogin.js is always generated to /public/javascripts
+* ajaxboxlogin.js is always generated to /public/javascripts/ajaxboxlogin.js
 
 ## In Your Code
 
@@ -45,7 +52,10 @@ The partial, _ajaxboxlogin, expects to be passed two parameters:
 * The login object (e.g., a User, Account or similar) that responds to two messages: login and password
 * The logged in state, similar to current_user.logged_in?
 
+    Syntax:
     <%= render partial 'shared/ajaxboxlogin', :locals => {:logged_status => boolean, :login_object => object} %>
+    
+    Example:
     <%= render partial 'shared/ajaxboxlogin', :locals => {:logged_status => true, :login_object => User} %>
 
 You may or may not have a login attribute on your User/Account object, if so you can edit the partial to use your preferred name or add an attr_accessible alias to the appropriate attribute on your object.

@@ -25,7 +25,7 @@ Installs as a gem
 Invoke the ajaxboxlogin generator
 
     Syntax:
-    ajaxboxlogin gen {view_type} {view_path} {javascript_lib}
+    ajaxboxlogin gen {template_engine} {view_path} {javascript_lib}
     
     Generates ERB/CSS files, dependent on jQuery, with the partial in app/views/shared
     ajaxboxlogin gen erb shared jquery      
@@ -35,7 +35,7 @@ Invoke the ajaxboxlogin generator
 
 ### Options
 
-* view_type is a string naming the template system to use, currently valid values are 'erb' and 'haml'
+* template_engine is a string naming the template system to use, currently valid values are 'erb' and 'haml'
 * view_path is a string appended to 'app/views' to build the directory name in which the partial is generated
 * javascript_lib is a string representing the name of the JavaScript framework used in your app, currently valid values are 'jquery' and 'prototype'
 

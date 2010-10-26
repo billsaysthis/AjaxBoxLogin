@@ -24,9 +24,12 @@ module AjaxBoxLogin
       def copy_js(js_lib)
         js_lib.downcase!
         case js_lib
-        when 'protoype' : copy_js_prototype
-        when 'jquery' : copy_js_jquery
-        when default : raise "Generator only supports Prototype and jQuery at this time"
+          when 'protoype'
+            copy_js_prototype
+          when 'jquery'
+            copy_js_jquery
+        else 
+          puts "Generator only supports Prototype and jQuery at this time"
         end
         puts "Generated ajaxboxlogin.js dependent on #{js_lib} in public/javascripts/"
       end
@@ -42,9 +45,12 @@ module AjaxBoxLogin
       def copy_css(view_type)
         view_type.downcase!
         case view_type
-        when 'haml' : copy_css_haml
-        when 'erb' : copy_css_erb
-        when default : raise "View type must be either HAML or ERB"
+        when 'haml'
+          copy_css_haml
+        when 'erb'
+          copy_css_erb
+        else
+          puts "View type must be either HAML or ERB"
         end
       end
       

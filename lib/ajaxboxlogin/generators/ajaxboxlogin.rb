@@ -22,6 +22,8 @@ module AjaxBoxLogin
         puts "Generated partial _ajaxbox_login.html.#{view_type} in app/views/#{view_path}/"
       end
       
+      # TODO
+      # Convert to case/separate functions
       def copy_js(js_lib)
         if js_lib == 'protoype'
           template("base.protoype.js", "public/javascripts/ajaxboxlogin.js")

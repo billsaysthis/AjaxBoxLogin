@@ -1,3 +1,6 @@
 pkg/*
 *.gem
 .bundle
+.gitignore
+Gemfile
+Gemfile.lock

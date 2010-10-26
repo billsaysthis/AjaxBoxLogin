@@ -1,5 +1,3 @@
-module Tstyle
-  module Login
-    VERSION = "0.0.1"
-  end
+module AjaxBoxLogin
+  VERSION = "0.0.2"
 end

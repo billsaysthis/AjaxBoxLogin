@@ -9,7 +9,7 @@ require "ajaxboxlogin/version"
 
 Gem::Specification.new do |s|
   s.name        = "ajaxboxlogin"
-  s.version     = AjaxBox::Login::VERSION
+  s.version     = AjaxBoxLogin::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Bill Lazar"]
   s.email       = ["blazar+abl@gmail.com"]

@@ -5,7 +5,7 @@ Feature: AjaxBoxLogin
 
 	Scenario: Login box is present but hidden
 		When I am on the homepage
-		Then "div.in-login-box" should be hidden
+		Then "div.in-login-box" should not be visible
 
 	Scenario: Login box is visible after opening
 		Given I am on the homepage

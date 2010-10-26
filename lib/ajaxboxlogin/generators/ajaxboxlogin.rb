@@ -13,8 +13,7 @@ module AjaxBoxLogin
         copy_view(view_type, view_path)
         copy_js(js_lib)
         copy_css(view_type)
-        rs = "Generation complete"
-        rs
+        puts "AjaxBoxLogin file generation completed"
       end
       
       def copy_view(view_type, view_path)
@@ -22,26 +21,41 @@ module AjaxBoxLogin
         puts "Generated partial _ajaxbox_login.html.#{view_type} in app/views/#{view_path}/"
       end
       
-      # TODO
-      # Convert to case/separate functions
       def copy_js(js_lib)
-        if js_lib == 'protoype'
-          template("base.protoype.js", "public/javascripts/ajaxboxlogin.js")
-        else
-          template("base.jquery.js", "public/javascripts/ajaxboxlogin.js")
+        js_lib.downcase!
+        case js_lib
+        when 'protoype' : copy_js_prototype
+        when 'jquery' : copy_js_jquery
+        when default : raise "Generator only supports Prototype and jQuery at this time"
         end
         puts "Generated ajaxboxlogin.js dependent on #{js_lib} in public/javascripts/"
       end
       
+      def copy_js_prototype
+        template("base.protoype.js", "public/javascripts/ajaxboxlogin.js")
+      end
+      
+      def copy_js_jquery
+        template("base.jquery.js", "public/javascripts/ajaxboxlogin.js")
+      end
+
       def copy_css(view_type)
-        if view_type == 'haml'
-          template("base.scss", "app/stylesheets/ajaxboxlogin.scss")
-          r = "Generated ajaxboxlogin.scss in app/stylesheets/"
-        else
-          template("base.css", "public/stylesheets/ajaxboxlogin.css")
-          r = "Generated ajaxboxlogin.css in public/stylesheets/"
+        view_type.downcase!
+        case view_type
+        when 'haml' : copy_css_haml
+        when 'erb' : copy_css_erb
+        when default : raise "View type must be either HAML or ERB"
         end
-        puts r
+      end
+      
+      def copy_css_haml
+        template("base.scss", "app/stylesheets/ajaxboxlogin.scss")
+        puts "Generated ajaxboxlogin.scss in app/stylesheets/"
+      end
+      
+      def copy_css_erb
+        template("base.css", "public/stylesheets/ajaxboxlogin.css")
+        puts "Generated ajaxboxlogin.css in public/stylesheets/"
       end
       
       def self.source_root

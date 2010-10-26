@@ -1,8 +1,10 @@
 Feature: Generating things
   In order to generate files necessary for AjaxBoxLogin
   As a developer
-  I want TSL to hold my hand, tightly
+  I want AjaxBoxLogin to hold my hand, tightly
 
+	# These scenarios are why the Aruba gem is required
+	
 	Scenario: Generating erb files for Prototype
 	  When I run "ajaxboxlogin erb shared"
 		Then the following files should exist:
@@ -28,5 +30,7 @@ Feature: Generating things
 			| public/javascripts/ajaxboxlogin.js |
 			| app/stylesheets/ajaxboxlogin.scss |
 
+	# TODO
+	# Add negative cases to test defaults
 	
 	

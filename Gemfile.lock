@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ajaxboxlogin (0.0.1)
+    ajaxboxlogin (0.0.2)
       activesupport
       thor
 
@@ -68,10 +68,10 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  ajaxboxlogin!
   aruba
   bundler (>= 1.0.0)
   capybara
   cucumber
   rspec (~> 2.0.0)
   thor
-  ajaxboxlogin!

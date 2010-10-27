@@ -14,7 +14,7 @@ module AjaxBoxLogin
     
     desc "version", "prints out AjaxBoxLogin's version information"
     def version
-      say "AjaxBoxLogin version #{AjaxBoxLogin::VERSION}"
+      say "AjaxBoxLogin version #{AjaxBoxLogin::AjaxBoxLogin::VERSION}"
     end
     map %w(-v --version) => :version
   end

@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project = "ajaxboxlogin"
 
-  s.files         = ['lib/ajaxboxlogin.rb'] + ['lib/ajaxboxlogin/cli.rb'] + CLASSES.map{|c| "lib/ajaxboxlogin/#{c}.rb"}
+  s.files         = ['lib/ajaxboxlogin.rb'] + ['lib/ajaxboxlogin/cli.rb'] + ['lib/version.rb']  + CLASSES.map{|c| "lib/ajaxboxlogin/#{c}.rb"}
   s.test_files    = FEATURES.map{|c| "features/#{c}.feature"} + SPECS.map{|c| "spec/#{c}_spec.rb"}
   s.executables   = ['ajaxboxlogin']
   s.require_paths = ["lib"]

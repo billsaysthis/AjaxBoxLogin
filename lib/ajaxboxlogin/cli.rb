@@ -1,9 +1,7 @@
 require 'thor' 
 require 'thor/actions' 
 require 'ajaxboxlogin/ajaxboxlogin'
-require File.expand_path("../lib/ajaxboxlogin/version", __FILE__)
-
-# require 'ajaxboxlogin/version'
+require 'ajaxboxlogin/version'
 
 module AjaxBoxLogin
   class CLI < Thor

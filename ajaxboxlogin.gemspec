@@ -1,6 +1,5 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "ajaxboxlogin/version"
+require File.expand_path("../lib/ajaxboxlogin/version", __FILE__)
 
 CLASSES = %w'ajaxboxlogin generators/ajaxboxlogin'
 FEATURES = %w'ajaxboxlogin generator'

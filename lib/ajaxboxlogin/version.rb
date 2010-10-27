@@ -1,3 +1,5 @@
 module AjaxBoxLogin
-  VERSION = "0.0.3"
+  class AjaxBoxLogin
+    VERSION = "0.0.5"
+  end
 end

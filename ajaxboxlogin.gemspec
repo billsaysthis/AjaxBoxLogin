@@ -2,10 +2,9 @@
 $:.push File.expand_path("../lib", __FILE__)
 require "ajaxboxlogin/version"
 
-# TODO
-# Remove dynamic file lists
-# Replace with array list of files and iterate over array
-# See RAMP gemspec for example
+CLASSES = %w'ajaxboxlogin generators/ajaxboxlogin'
+FEATURES = %w'ajaxboxlogin generator'
+SPECS = %w'ajaxboxlogin'
 
 Gem::Specification.new do |s|
   s.name        = "ajaxboxlogin"
@@ -20,9 +19,9 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project = "ajaxboxlogin"
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.files         = ['lib/ajaxboxlogin.rb'] + ['lib/cli.rb'] + CLASSES.map{|c| "lib/ajaxboxlogin/#{c}.rb"}
+  s.test_files    = FEATURES.map{|c| "features/#{c}.feature"} + SPECS.map{|c| "spec/#{c}_spec.rb"}
+  s.executables   = ['bin/ajaxboxlogin.rb']
   s.require_paths = ["lib"]
   
   s.add_development_dependency "bundler", ">= 1.0.0"
